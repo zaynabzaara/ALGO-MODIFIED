@@ -1,0 +1,27 @@
+ALGORITHM PHRASE
+ VAR
+  nbc,nbv,nbw,i: INTEGER := 0;
+  ph: STRING;
+  c:char;
+ 
+ BEGIN
+  //saisie de la phrase
+  read(ph)
+  //determination nombre caractere voyelle et mots
+  while (ph[i] <> '.' ) DO 
+    C:=ph[i];
+    nbc:=nbc+1;
+    IF (c in ['a','i','u','e','o','y','A','E','I','U','O','Y'])THEN
+        nbv:=nbv+1;
+    END_IF
+
+    IF (c=' ' and ph[i+1]<>'.') THEN
+        nbw:=nbw+1;
+    END_IF
+    i:=i+1;
+  END_WHILE
+  write(nbc+1)
+  write(nbv)
+  write(nbw)
+  
+ END
